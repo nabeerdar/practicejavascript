@@ -1,0 +1,163 @@
+<html>
+
+	<head>
+		<title>Introduction to JavaScript</title>
+		<style>
+			.tab{
+				margin-left:2.5em
+			}
+		</style>
+	</head>
+
+	<body>
+	
+	<h1>Learning JavaScript (Arrays)</h1>
+
+	<hr>
+	
+	<div style = "text-align: right">
+		<h2>Console Log</h2>
+			<p>Remember to open the console (Press F12) to check variables output.</p>
+	</div>
+
+    <h4>Array of objects & an array of strings is used</h4>
+    <p class="tab">
+        <p id = arrayOfObjects></p>
+    </p>
+
+    <h4>Most Import methods of an array</h4>
+    <p >Working with arrays in JavaScript used to be a pain with barely any support for complex array operations. 
+        Fast forward to today, though, and there are tons of amazing JavaScript array methods available to us.
+        The 4 most important array methods in JavaScript.
+        <div class="tab">
+                 filter
+            <br> map
+            <br> find
+            <br> reduce
+            <br> concat
+            <br> indexOf
+            <br> join
+            <br> length
+            <br> pop
+            <br> push 
+            <br> reverse
+            <br> sort 
+            <br>toString
+        </div>
+        <br>
+    
+    <p>Also check output in the console</p>
+    <script>
+
+        let multilineString = 
+        `
+            const fruits = [                         <br>
+                {fruit:     "mango",   price: 120},  <br>
+                {fruit:     "banana",  price: 80},   <br>
+                {fruit:     "apple",   price: 250},  <br>
+                {vegetable: "tomato",  price: 25},   <br>
+                {vegetable: "carrot",  price: 30}    <br>
+            ]
+            <br>
+            <br>
+            const deliciousFruits = ["Banana", "Orange", "Apple", "Mango"];
+        `;
+
+        document.getElementById("arrayOfObjects").innerHTML = multilineString
+
+        const fruits = [
+            {fruit: "mango", price: 120},
+            {fruit: "banana", price: 80},
+            {fruit: "apple", price: 250},
+            {vegetable: "tomato", price: 25},
+            {vegetable: "carrot", price: 30}
+        ]
+
+        const deliciousFruits = ["Banana", "Orange", "Apple", "Mango"];
+        
+        //-------------------filter function--------------------
+        console.log("-------------------filter function--------------------")
+        const filteredItems = fruits.filter(item=>{
+            //hasOwnPerperty is very important
+            //has own perperty of objects checks if given key is present or not
+            if (item.hasOwnProperty('fruit')){
+                return item
+            }
+        })
+        console.log(filteredItems)
+
+         //-------------------map function--------------------
+         console.log("-------------------map function--------------------")
+        const mapedItems = fruits.map(item=>item.price * 0.5)
+        console.log("mapped prices to half")
+        console.log(mapedItems)
+
+        //-------------------find function--------------------
+        console.log("-------------------Find function--------------------")
+        const findItem = fruits.find(item=>item.fruit === "banana")
+        console.log("finding banana")
+        console.log(findItem)
+        
+        //reduce taked key and the property for what we want to reduce everything into 
+        //-------------------find function--------------------
+        console.log("-------------------Reduce function--------------------")
+        const reduceItem = fruits.reduce((currentTotal, item) => item.price += currentTotal ,150)
+        console.log("Adding up all the prices in currentTotal varible one by one, where currentTotal is initialized by 150")
+        console.log("which is: 150 + (180 + 80 + 250 + 25 + 30")
+        console.log(reduceItem)
+        
+        
+        console.log("-------------------Concat function--------------------")
+        moreItems=[
+            {fruit: "guava", price: 100},
+            {vegetable: "kiwi", price: 700}
+        ]
+        const updatedItem = fruits.concat(moreItems)
+        console.log(updatedItem)
+
+        console.log("-------------------indexOf function--------------------")
+        let index = deliciousFruits.indexOf("Apple");
+        console.log(index)
+
+        //Any separator can be specified. The default is comma (,)
+        console.log("-------------------Join function--------------------")
+        let text = deliciousFruits.join(", ");
+        console.log(text)
+
+        console.log("-------------------Length function--------------------")
+        let length = deliciousFruits.length;
+        console.log(length)
+            
+        console.log("-------------------Pop function--------------------")
+        let popedFruit =deliciousFruits.slice() 
+        console.log(deliciousFruits)
+        popedFruit.pop();
+        console.log(popedFruit)
+
+        console.log("-------------------Pushed function--------------------")
+        let pushedFruit = deliciousFruits.slice() 
+        console.log(pushedFruit)
+        pushedFruit.push("Halwa")
+        console.log(pushedFruit)
+
+        console.log("-------------------Reversed function--------------------")
+        let reversedFruits = deliciousFruits.slice() 
+        console.log(deliciousFruits)
+        reversedFruits = reversedFruits.reverse();
+        console.log(reversedFruits)
+
+        console.log("-------------------Sort function--------------------")
+        let sortedFruits = deliciousFruits.slice() 
+        sortedFruits.sort();
+        console.log(sortedFruits)
+
+        console.log("-------------------toString function--------------------")
+        let toStringFruits = deliciousFruits.slice() 
+        toStringFruits = toStringFruits.toString();
+        console.log(toStringFruits)
+        console.log("type is: " + typeof(toStringFruits))
+
+    </script>
+    
+</body>
+</html>

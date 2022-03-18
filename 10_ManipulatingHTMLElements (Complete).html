@@ -1,0 +1,219 @@
+<html>
+
+	<head>
+		<title>Introduction to JavaScript</title>
+		<style>
+			.tab{
+				margin-left:2.5em
+			}
+
+            .courses{
+				color:black
+			}
+            .italicText{
+                font-style:italic
+            }
+		</style>
+	</head>
+
+	<body>
+	
+	<h1>Learning JavaScript (ManipulatingHTMLElements)</h1>
+
+	<hr>
+	
+	<div style = "text-align: right">
+		<h2>Console Log</h2>
+			<p>Remember to open the console (Press F12) to check variables output.</p>
+	</div>
+    <h2 id="singleSelectors">Single Element Selectors</h2>
+    <div class="tab">
+
+        <div id="headingLevel"><b>getElementById</b></div>
+            <div id="divLevel" class="tab">
+                <p id = "paragraphLevel">
+                   Courses
+                </p>
+
+                <input type = "text" id="userInput" placeholder = "Enter value here"> 
+                <input value="Click Here" type = "button" id = "clickBtn" onClick="showInputText()">
+                <p id="btnClicked"></p>
+            </div>
+            <br>
+
+        <div id="querySelectorHeading"><b>querySelector</b></div>
+            <br>
+            <div id="divLevel" class="tab">
+                Mr. Muhammad Sajid Qureshi Courses
+                <div class = "tab courses">  
+                    1: Data Science
+                </div>
+                <div class = "tab courses">  
+                    2: Web Engineering
+                </div>
+            </div>
+            <br>
+            
+    </div>
+    
+    <h2 id="multiSelectors">Multiple Elements Selectors</h2>
+   
+    <div class="tab">
+        <b>Student Properties:</b>
+        <div class="tab">
+            <div class = "fadeStudentContainer">
+                <div class = italicText>
+                    <p><b>Name:</b> Nabeer Hassan Dar</p>
+                </div>
+                <div class = italicText>
+                    <p><b>Education</b> BCSE (2016 - 2020)</p>
+                </div>
+                <div class = italicText>
+                    <p><b>Graduated From: </b> Foundation University Rawalpindi Campus</p>
+                </div>
+                <br>
+            </div> 
+        </div>
+        <input onclick="fade()" value = "Click here to fade"  type = "button">
+        <input onclick="reFade()" value = "Try Again"  type = "button">
+        
+    </div>
+
+    <br>
+
+    <h2 id="nodes">Children, Parent & Traversing the DOM</h2>
+    <div class="tab">
+        <div class="parentNode">
+            <p class = "childNode1">
+                <b>Work Experience:</b>
+            </p>
+            <div class="childNode2 tab">     
+                <p>
+                    <span>
+                        <b>Whizpool:</b>
+                    </span>
+                    <span class = "grandGrandChildNode2">
+                        Full Stack Web Developer (ReactJs | NodeJs)
+                    </span>
+                <p>
+                    <span>
+                        <b>SigmaSquare Ai:</b>
+                    </span>
+                    <span class = "grandGrandChildNode2">
+                        Junior Machine Learning Engineer
+                    </span>
+                </p>
+                <b>github profile:</b> <a href = "https://www.github.com/nabeerdar">github.com/nabeerdar</a>
+            </div>
+        </div>
+
+        <br><br>
+
+        Changing Parent Node's color
+        <form>
+            <input id = "enterWorkExperienceColor" placeholder="Enter color">
+            <input onclick="changeWorkExperienceColor()" value = "Change Color"  type = "button">
+        </form>
+
+        Changing Child Node's color
+        <form>
+            <input id = "enterChildColor" placeholder="Enter color">
+            <input onclick="changeGrandGrandChildColor()" value = "Change Color"  type = "button">
+        </form>
+    </div>
+
+    <br>
+    <hr>
+
+    <h5 >
+        <b>
+            <p style = "font-style:bold ;">Also check output in the console<p>
+        </b>
+    </h5>
+    <script>
+
+        //Single Element Selecrots
+            //document.getElementById
+            //document.querySelector
+
+        console.log("-------------------document.getElementById--------------------")
+        
+        divLevel = document.getElementById("divLevel")
+        
+        //Changing CSS properly
+        divLevel.style.color="red"
+        classNameDivLevel = divLevel.className
+        console.log("classNameDivLevel: "+classNameDivLevel)
+        console.log(divLevel)
+
+        //.innerHTMl
+        innerHTMLdivLevel = document.getElementById("divLevel").innerHTML
+        console.log("innerHTMLdivLevel: " + innerHTMLdivLevel)
+        
+        //.innerText
+        innerTextdivLevel = document.getElementById("divLevel").innerText
+        console.log("innerTextdivLevel: " + innerTextdivLevel)
+        
+        //.value
+        let showInputText= ()=>{
+            let userInput = document.getElementById("userInput").value
+            console.log(userInput)
+            document.getElementById("btnClicked").innerText = userInput
+        }
+        
+        console.log("-------------------document.getQuerySelector--------------------")
+        let querySelectorByID = document.querySelector("#querySelectorHeading")
+        //Selects first element
+        let querySelectorByClassName = document.querySelector(".courses")
+        console.log("querySelectorByClassName: "+querySelectorByClassName.innerText)
+        console.log("Selected first class(tab)'s' element: to -> ", (querySelectorByClassName.style.color="green"))
+
+
+        //---------------------Multi Element Selectors--------------------------
+        
+        console.log("\n\n---------------------Multi Element Selectors--------------------------")
+
+        let fade = () => {
+            studentProperties = document.getElementsByClassName("italicText")
+            console.log(studentProperties)
+            Array.from(studentProperties).forEach(element=>{
+                element.style.opacity = "0.2";
+                console.log("element: "+ element)
+            });
+        }
+
+        let reFade = () => {
+            studentProperties = document.getElementsByClassName("italicText")
+            console.log(studentProperties)
+            Array.from(studentProperties).forEach(element=>{
+                element.style.opacity = "1";
+                console.log("element: "+ element)
+            });
+        }
+
+
+        //----------------Children, Parent & Traversing the DOM--------------------
+        
+
+        let changeWorkExperienceColor=()=>{
+            //getting color as input from user
+            colorWorkExperience = document.getElementById("enterWorkExperienceColor").value
+            let workExperience = document.getElementsByClassName("childNode1")
+            workExperience[0].style.color=colorWorkExperience
+        }
+
+        //treversing here from parent node to grand grand children nodes
+        let changeGrandGrandChildColor=()=>{
+            //getting color as input from user
+            colorGrandGrandChildren = document.getElementById("enterChildColor").value
+            let grandGrandChildren = document.getElementsByClassName("parentNode")
+            //Full Stack Web Developer (ReactJs | NodeJs)    
+            grandGrandChildren[0].children[1].children[0].lastElementChild.previousElementSibling.style.color=colorGrandGrandChildren
+            //Junior Machine Learning Engineer
+            grandGrandChildren[0].children[1].children[1].children[0].nextElementSibling.style.color=colorGrandGrandChildren
+        }
+
+    </script>
+    
+</body>
+</html>

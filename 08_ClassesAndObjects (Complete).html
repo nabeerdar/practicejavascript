@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>Introduction to JavaScript</title>
+		<style>
+			.tab{
+				margin-left:2.5em
+			}
+		</style>
+	</head>
+
+	<body>
+	
+	<h1>Learning JavaScript (Classes and Objects)</h1>
+
+	<hr>
+	
+	<div style = "text-align: right">
+		<h2>Console Log</h2>
+			<p>Remember to open the console (Press F12) to check variables output.</p>
+	</div>
+
+		
+	Difference between arrow and normal function (this keyword)
+	<br> <br>
+	Arrow function is used here (inside class):
+	<br><br>
+	<br>
+
+
+	Arrow Function: <input type="text" id="myText" placeholder="please enter any value">
+	<div class="tab">
+		<!-- Enter here: <input id="inputArrowFunc"><br><br> -->
+		<br>
+		<div id = "arrowFunctChange" class="tab">
+			<div class="tab">
+				<input onclick="arrowFunctionClicked()" value="Click here" type="button">
+			</div>
+		</div>
+	</div>
+    <br> <br>
+
+	Normal Function: <input type="text" id="myText" placeholder="please enter any value">
+	<div class="tab">
+		<!-- Enter here: <input id="inputArrowFunc"><br><br> -->
+		<br>
+		<div id = "normalFunctChange" class="tab">
+			<div class="tab">
+				<input onclick="normalFunctionClicked()" value="Click here" type="button">
+			</div>
+		</div>
+	</div>
+<br>
+<hr>
+<br>
+	<h4>Object Deconstruction</h4>
+	Write these quries on console to see result<br>
+	<p class="tab">
+		console.log(nashta)<br><br>
+		Now, assign new property to this object
+		<br>
+		nashta.newRecepie = "majedaar halwa"
+		<br><br>
+		check Nashta value again:<br>
+		console.log(nashta)<br><br>
+		, Similarly, check<br><br>
+		console.log(oldRecepie)<br>
+		console.log(cookingTime)<br>
+		
+	</p>
+
+	<script>
+
+		//Class, and .this scope example
+
+		class functionsDotThisScope{
+
+			constructor(enteredValue){
+				this.enteredValue = enteredValue
+			}
+
+			printArrowFunction() {
+				
+				setTimeout(() => {
+					console.log(`Arrow Function: ${this.enteredValue}`)
+					document.getElementById('arrowFunctChange').innerHTML = "Check console for the output"
+				}, 400)
+			}
+			printNormalFunction() {
+				
+				setTimeout(function() {
+					console.log(`Normal Function: ${this.enteredValue}`)
+					document.getElementById('normalFunctChange').innerHTML = "Check console for the output"
+				}, 400)
+			}
+		}
+
+		let arrowFunctionClicked=()=>{
+			var inputValue = document.getElementById("myText").value;
+			let arrowThisScope = new  functionsDotThisScope(inputValue);
+			arrowThisScope.printArrowFunction()
+		}
+
+		let normalFunctionClicked=()=>{
+			var inputValue = document.getElementById("myText").value;
+			let normalThisScope = new  functionsDotThisScope(inputValue);
+			normalThisScope.printNormalFunction()
+		}
+
+		//onject declaration
+
+		//check in console
+		const nashta = {
+  				oldRecepie: 'paratha, anda',
+  				cookingTime: '30 min'
+		};
+
+		//object deconstruction
+
+		const oldRecepie = nashta.oldRecepie;
+		const cookingTime = nashta.cookingTime;
+
+		
+
+	</script>
+	
+	</body>
+</html>

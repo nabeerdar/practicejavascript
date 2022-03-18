@@ -1,0 +1,98 @@
+<html>
+
+	<head>
+		<title>Introduction to JavaScript</title>
+		<style>
+			.tab{
+				margin-left:2.5em
+			}
+		</style>
+	</head>
+
+	<body>
+	
+	<h1>Learning JavaScript (Loops)</h1>
+
+	<hr>
+	
+	<div style = "text-align: right">
+		<h2>Console Log</h2>
+			<p>Remember to open the console (Press F12) to check variables output.</p>
+	</div>
+
+
+    <h3>fruits = ["apple", "orange", "cherry"];</h3>
+    <p class="tab">
+        Following loops are applied in this array, check javascript code.
+        <br>
+        <div class="tab">
+            <ui>
+                <li>For loop</li>
+                <br>
+                <li>While loop</li>
+                <br>
+                <li>Do While loop</li>
+                <br>
+                <li>For Each loop</li>
+                <br>
+                <li>For in loop</li>
+                <br>
+                <li>For of loop</li>
+            </ui>
+        </div>
+    </p>
+    <br>
+    <p class="tab">Check JavaScript Code, for the implementation of these loops</p>
+
+    <p class = "tab">Also check console for the output</p>
+
+    <script>
+        const fruits = ["apple", "orange", "cherry"];
+
+        // For Loop (Old / Traditional)
+        console.log("--------------Traditional For Loop-----------")
+        for(i=0; i< (fruits.length); i++){
+            const fruit = fruits[i]
+            console.log(fruit)
+        }
+        "<br>"
+        "<br>"
+
+        // For in Loop
+        console.log("--------------for in loop--------------")
+        for (let fruitIndex in fruits){
+            console.log(fruitIndex)
+        }
+
+        // For of Loop
+        console.log("-------------for of loop-----------------")
+        for (let fruitName of fruits){
+            console.log(fruitName)
+        }
+
+        // For Each Loop
+        console.log("--------------For Each Loop-------------")
+        fruits.forEach(getIndexAndValue);
+        
+        function getIndexAndValue(item, index) {
+            const fruit = index + ": " + item;
+            console.log(fruit)
+        }
+
+        // While Loop
+        text = "";
+        index = 0
+
+        console.log("--------------While Loop-----------------")
+        while (index < (fruits.length)){
+            const fruit = fruits[index]
+            console.log(fruit)
+            index += 1
+        }
+
+        
+            
+    </script>
+    
+</body>
+</html>

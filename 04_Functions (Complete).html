@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>Introduction to JavaScript</title>
+		<style>
+			.tab{
+				margin-left:2.5em
+			}
+		</style>
+	</head>
+
+	<body>
+	
+	<h1>Learning JavaScript (Functions)</h1>
+
+	<hr>
+	
+	<div style = "text-align: right">
+		<h2>Console Log</h2>
+			<p>Remember to open the console (Press F12) to check variables output.</p>
+	</div>
+
+		
+	An Example of double equal comparison
+	<div class="tab">
+		number1 = 10 <br>
+		number2 = "10" <br>
+		number1 == number2
+
+		<div id= "doubleEqualResult">
+			<input type = "button" 
+				   id = "doubleEqualComparison" 
+				   value = "Click here to check result of double equal comparison" 
+				   onClick = "checkDoubleEqualComparisson()">
+		</div>
+
+	</div> 
+	<br>
+	An Example of triple equal comparison
+	<div class="tab">
+		number1 = 10 <br>
+		number2 = "10" <br>
+		number1 === number2
+
+		<div id= "tripleEqualResult">
+			<input type = "button" 
+				   id = "tripleEqualComparison" 
+				   value = "Click here to check result of triple equal comparison" 
+				   onClick = "checkTripleEqualComparisson()">
+		</div>
+		
+	</div>
+
+
+
+	<script>
+
+		//Simple Function
+
+		//Showing with let's block level scope example
+		// let number1 = 10;
+		// let number2 = "10";
+
+		// simple function
+		// function checkDoubleEqualComparisson(){
+			let number1 = 10;
+			let number2 = "10";
+		// 	document.getElementById("doubleEqualResult").innerHTML = (number1 == number2);
+		// }
+
+		//An example of Arrow Function
+		let checkDoubleEqualComparisson = (number1, number2) =>
+		{
+			document.getElementById("doubleEqualResult").innerHTML = (number1 == number2);
+		}
+
+		function checkTripleEqualComparisson(){
+			
+			document.getElementById("tripleEqualResult").innerHTML = (number1 === number2);
+		}
+
+
+		//this keyword is different in arrow and normal function
+		// Please refer 07_ClassesAndObjects.html file for .this example in arrow vs normal function
+		//Example:
+		
+		
+
+	</script>
+	
+	</body>
+</html>

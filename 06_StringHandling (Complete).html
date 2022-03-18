@@ -1,0 +1,105 @@
+<html>
+
+	<head>
+		<title>Introduction to JavaScript</title>
+		<style>
+			.tab{
+				margin-left:2.5em
+			}
+		</style>
+	</head>
+
+	<body>
+	
+	<h1>Learning JavaScript (String Handling)</h1>
+
+	<hr>
+	
+	<div style = "text-align: right">
+		<h2>Console Log</h2>
+			<p>Remember to open the console (Press F12) to check variables output.</p>
+	</div>
+
+    <p>text1: "I study in Foundation University"</p>
+
+    <p>text2: "Islamabad Campus"</p>
+
+    <h4>Most commonly used string functions</h4>
+    <p >
+        <div class="tab">
+                concat
+                <br>length
+                <br>replace
+                <br>search
+                <br>slice
+                <br>split
+                <br>toLocaleLowerCase
+                <br>toLocaleUpperCase
+                <br>trim
+            <br> 
+        </div>
+        <br>
+    
+    <p>Also check output in the console</p>
+    <script>
+
+        let str1 = "I study in Foundation University "
+        let str2 = "Islamabad Campus"
+
+        //-------------------concat function--------------------
+        console.log("-------------------concat function--------------------")
+        stringsConcat = str1.concat(str2)
+        console.log(stringsConcat)
+
+        //-------------------length function--------------------
+        console.log("-------------------length function--------------------")
+        str1Length = str1.length
+        console.log(str1Length)
+
+        //-------------------replace function--------------------
+        console.log("-------------------replace function--------------------")
+        str1Replace = str1.replace("I", "You")
+        console.log(str1Replace)
+
+        //-------------------search function--------------------
+        console.log("-------------------search function--------------------")
+        str1Search = str1.search("Foundation")
+        console.log(str1Search)
+
+        //-------------------slice function--------------------
+        //Slice the first 10 positions:
+        console.log("-------------------slice function--------------------")
+        str1Slice = str1.slice(0,10)
+        console.log(str1Slice)
+        
+        //-------------------split function--------------------
+        //splits a string into an array of substrings, and returns the array:
+        console.log("-------------------split function--------------------")
+        arrayofString = str1.split(" ")
+        console.log(arrayofString)
+
+        //-------------------toLocaleLowerCase function--------------------
+        //The toLocaleLowerCase() method does not change the original string. The toLocaleLowerCase() returns the same result as toLowerCase()
+        console.log("-------------------toLocaleLowerCase function--------------------")
+        str1LocaleLowerCase = str1.toLocaleLowerCase()
+        console.log(str1LocaleLowerCase)
+
+        //-------------------toLocaleUpperCase function--------------------
+        //toLocaleUpperCase() does not affect the value of the string itself
+        console.log("-------------------toLocaleUpperCase function--------------------")
+        str1LocaleUpperCase = str1.toLocaleUpperCase()
+        console.log(str1LocaleUpperCase)
+
+        //-------------------trim function--------------------
+        //toLocaleUpperCase() does not affect the value of the string itself
+        str3 = "             I study in Foundation University            "
+
+        console.log("-------------------trim function--------------------")
+        console.log("Origional String: " + `"` + str3 + `"`)
+        str3Trim = str3.trim()
+        console.log("Trimmed String: "+ str3Trim)
+
+    </script>
+    
+</body>
+</html>

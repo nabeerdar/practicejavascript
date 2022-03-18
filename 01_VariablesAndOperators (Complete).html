@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>Introduction to JavaScript</title>
+		<style>
+			.tab{
+				margin-left:2.5em
+			}
+		</style>
+	</head>
+
+	<body>
+	
+	<h1>Learning JavaScript (Variables and Operators)</h1>
+
+	<hr>
+	
+	<div style = "text-align: right">
+		<h2>Console Log</h2>
+			<p>Remember to open the console (Press F12) to check variables output.</p>
+	</div>
+
+	
+	
+	<h3>
+		Variables
+	</h3>
+	<div class="tab">
+
+		<h4>Var</h4>
+			<p>
+				It is global scoped. Example is shown in conditional statements.<br>
+				It is the keyword that tells JavaScript you're declaring a variable.<br>
+			</p>
+			
+		<h4>Let</h4>
+			<p>
+				Variables defined with let must be Declared before use.<br>
+				It is block scoped. Example is shown in conditional statements. <br> 
+				The let keyword was introduced in ES6 (2015). 
+				Variables defined with let cannot be Redeclared.
+			</p>
+			
+		<h4>Const</h4>
+			<p>
+				Variables defined with const can not be redeclared.<br>
+				It is block scoped. Example is shown in conditional statements <br>
+				const allows you to only modify the value of the array, but the reference to the array cannot be changed.
+			</p>
+	
+	</div>
+
+	<h3>
+		Operators
+	</h3>
+
+
+	<div class = "tab">
+		<h4>
+			+, -, *, **, /, %, ++, --, =, ==, ===
+		</h4>
+		<p>
+			Difference between == and ===
+			<div class="tab">
+				<p>
+					The difference between == and === is that: == converts the variable values to the same type before performing comparison. <br>
+					This is called type coercion. === does not do any type conversion (coercion) and returns true only if both values and types are 
+					identical for the two variables being compared.
+				</p>
+
+			</div>
+
+		</p>
+	</div>
+
+	<br>
+	<hr>
+	<h4>Paste and execute each line in console and check the result</h4>
+	<div class="tab">
+		<br>
+		console.log("Declared number with 10, using var");
+		<br>
+		var varNumber = 10
+		<br>
+		console.log(varNumber);
+		<br>
+		<br>
+		console.log("Reclared number with 20, using var");
+		<br>
+		var varNumber = 20
+		<br>
+		console.log(varNumber);
+		<br>
+		<br>
+		console.log("Declared number with 10, using let");
+		<br>
+		let letNumber = 10
+		<br>
+		console.log(letNumber);
+		<br>
+		console.log("Reclared number with 20, using let");
+		<br>
+		let letNumber = 20
+		<br>
+		console.log(letNumber);
+		<br>
+		<br>
+
+		console.log("Declared number with 10, using const");
+		<br>
+		const constNumber = 10
+		<br>
+		console.log(constNumber);
+		<br>
+		console.log("Reclared number with 20, using const");
+		<br>
+		const constNumber = 20
+		<br>
+		console.log(constNumber);
+		<br>
+		<br>
+
+		console.log("Declared object with name: Nabeer, batch: fall16 using const");
+		<br>
+		const constObject = {
+			<br>
+								name: "Nabeer",
+								<br>
+								batch: "2016 - 2020"
+								<br>
+							}
+							<br>
+		console.log(constObject);
+		<br>
+		console.log("Changed batch value from const object created earlier");
+		<br>
+		constObject.batch = "2016 - 2021"
+		<br>
+		console.log(constObject);
+		<br>
+
+	</div>
+
+	<script>
+		
+		console.log("Declared number with 10, using var");
+		var varNumber = 10
+		console.log(varNumber);
+		
+		console.log("Reclared number with 20, using var");
+		var varNumber = 20
+		console.log(varNumber);
+
+		//------------
+		
+		// console.log("Declared number with 10, using let");
+		// let letNumber = 10
+		// console.log(letNumber);
+		// console.log("Reclared number with 20, using let");
+		// let letNumber = 20
+		// console.log(letNumber);
+
+		// console.log("Declared number with 10, using const");
+		// const constNumber = 10
+		// console.log(constNumber);
+		// console.log("Reclared number with 20, using const");
+		// const constNumber = 20
+		// console.log(constNumber);
+
+		//------------
+
+		console.log("Declared object with name: Nabeer, batch: fall16 using const");
+		const constObject = {
+								name: "Nabeer",
+								batch: "2016 - 2020"
+							}
+		console.log(constObject);
+		console.log("Changed batch value from const object created earlier");
+		constObject.batch = "2016 - 2021"
+		console.log(constObject);
+
+	</script>
+	
+	</body>
+</html>

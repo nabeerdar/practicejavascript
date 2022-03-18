@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>Introduction to JavaScript</title>
+		<style>
+			.tab{
+				margin-left:2.5em
+			}
+		</style>
+	</head>
+
+	<body>
+	
+	<h1>Learning JavaScript (Conditional Statements)</h1>
+
+	<hr>
+	
+	<div style = "text-align: right">
+		<h2>Console Log</h2>
+			<p>Remember to open the console (Press F12) to check variables output.</p>
+	</div>
+
+	
+	
+	<H3>Switch Statement</H3>
+	<div class="tab">
+		<p> Checking Current Time in Hours</p><br>
+		<div id ="checkHoursBtn">
+			<button onClick = "checkHours(hour)"> Click here to check current time in hours</button>
+
+		</div>
+	</div>
+	<script>
+
+		// --------------If Else-------------------
+
+		// Global and Block Scope Example
+		if (true){
+			var varValue = "var has global scope"
+		}
+		console.log(varValue);
+
+		if (true){
+			var letValue = "let has block scope"
+		}
+		console.log(letValue);
+
+		// If, Else if, Else
+		console.log("Declared object with name: Nabeer, batch: fall16 using const");
+		const constObject = {
+								name: "Nabeer",
+								batch: "2016 - 2020"
+							}
+	 
+		if (constObject.batch.length < 40 && constObject.batch.length >20){
+			console.log("length is less than 40")
+		}
+		else if (constObject.batch.length < 20 && constObject.batch.length >=10){
+			console.log("length is between 10 and 20")
+		}
+		else{
+			console.log("length is less than 10")
+		}
+
+		//-------------Switch Statement-----------
+		
+		let hour;
+		
+		// // getHours() returns the hour (from 0 to 23) of a date
+		new Date().getHours()
+		switch (new Date().getHours()) {
+			case 0:
+				hour = "12am";
+				break;
+			case 1:
+				hour = "1am";
+				break;
+			case 2:
+				hour = "2am";
+				break;
+			case 3:
+				hour = "3am";
+				break;
+			case 4:
+				hour = "4am";
+				break;
+			case 5:
+				hour = "5am";
+				break;
+			case  6:
+				hour = "6am";
+			case  7:
+				hour = "7am";
+			case  8:
+				hour = "8am";
+			case  9:
+				hour = "9am";
+			case  10:
+				hour = "10am";
+			case  11:
+				hour = "11pm";
+			case  12:
+				hour = "12pm";
+			case 13:
+				hour = "1pm";
+				break;
+			case 14:
+				hour = "2pm";
+				break;
+			case 15:
+				hour = "3pm";
+				break;
+			case 16:
+				hour = "4pm";
+				break;
+			case 17:
+				hour = "5pm";
+				break;
+			case 18:
+				hour = "6pm";
+				break;
+			case  19:
+				hour = "7pm";
+			case  20:
+				hour = "8pm";
+			case  21:
+				hour = "9pm";
+			case  22:
+				hour = "10pm";
+			case  23:
+				hour = "11pm";
+		}
+		// functions exercises on 04_Functions, used function here to complete OnClick 
+		function checkHours(current_time){
+			document.getElementById("checkHoursBtn").innerHTML = "Current time is: " + current_time;
+		}
+
+	</script>
+	
+	</body>
+</html>
